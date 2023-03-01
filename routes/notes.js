@@ -1,12 +1,11 @@
-//-------------Imports Files and Modules for Application to run:
+//Imports Files
 const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
-//-------------Using Json Package, creates a Unique ID for Each Note added by the User, this is then Amended/Appended to the notes.HTML File:
 const { v4: uuidv4 } = require('uuid');
 
-//-------------'Post' code for the User Input upon each new note, it will pasre as a JSON then be written to the db.js file:.
+//Post
 app.post("/notes", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
     if (err) throw err;
@@ -25,7 +24,7 @@ app.post("/notes", (req, res) => {
   });
 });
 
-//-------------'Get' code for the User Input that will save as a JSON that is read by the db.js file:
+//get
 app.get("/notes", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
     if (err) throw err;
@@ -33,7 +32,8 @@ app.get("/notes", (req, res) => {
   });
 });
 
-//-------------'Deletes' code, for User to Delete Previous Notes:
+
+//Deletes
 app.delete("/notes/:id", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
     if (err) throw err;
@@ -51,5 +51,8 @@ app.delete("/notes/:id", (req, res) => {
   });
 });
 
-//-------------Exports the "post.js" File:
+
+
+
+
 module.exports = app;
