@@ -9,16 +9,16 @@ const { v4: uuidv4 } = require('uuid');
 app.post("/notes", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
     if (err) throw err;
-    const notes = JSON.parse(data);
-    const newNote = req.body;
-    newNote.id = uuidv4();
-    notes.push(newNote);
+    const All_Nots = JSON.parse(data);
+    const New_Text = req.body;
+    New_Text.id = uuidv4();
+    All_Nots.push(New_Text);
     fs.writeFile(
       path.join(__dirname, "../db/db.json"),
-      JSON.stringify(notes),
+      JSON.stringify(All_Nots),
       (err) => {
         if (err) throw err;
-        res.json(newNote);
+        res.json(New_Text);
       }
     );
   });
@@ -38,14 +38,14 @@ app.delete("/notes/:id", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
     if (err) throw err;
     const notes = JSON.parse(data);
-    const noteId = req.params.id;
-    const newNotes = notes.filter((note) => note.id !== noteId);
+    const Note_Id = req.params.id;
+    const New_Text = notes.filter((note) => note.id !== Note_Id);
     fs.writeFile(
       path.join(__dirname, "../db/db.json"),
-      JSON.stringify(newNotes),
+      JSON.stringify(New_Text),
       (err) => {
         if (err) throw err;
-        res.json(newNotes);
+        res.json(New_Text);
       }
     );
   });
