@@ -58,7 +58,7 @@ This project is licensed under; MIT_License
 ```
 
 ## Questions:
-[Please use this this video url for more information about this application ](https://github.com/ManojAdikari/Professional_README_Generator)<br />
+[Please use this url for more information about this application ](https://frozen-chamber-81186.herokuapp.com/)<br />
 [see this project Repositorie ](https://github.com/ManojAdikari/Tasks_Organizer_Note_Taker)<br />
 [Clone this project](https://github.com/ManojAdikari/Tasks_Organizer_Note_Taker.git) <br />
 [Clone this project](git@github.com:ManojAdikari/Tasks_Organizer_Note_Taker.git)<br />
